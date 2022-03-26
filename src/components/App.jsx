@@ -12,6 +12,11 @@ const App = () => {
   const history = useHistory();
   const [userData, setUserData] = useState(null);
 
+  {/*
+    Нужно исправить: переход в projects без проверки наличия токена приводит к тому, что на страницу может
+    попасть неавторизованный пользователь. Можно сделать проверку или перехватывать ошибки на уровне onLogin
+    вместо login. Или сделать проверку на наличие токена в ответе от login.
+  */}
   const onLogin = (data) => {
     login(data)
       .then(() => {

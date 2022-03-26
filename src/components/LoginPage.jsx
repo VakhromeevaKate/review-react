@@ -28,6 +28,10 @@ const LoginPage = ({ onLogin }) => {
           placeholder="Введите email"
           onChange={handleChange}
         />
+        {/*
+           Надо исправить: minlength -> minLength и maxlength -> maxLength. В реакт свойства пишутся camelCase-ом.
+           Более подробно можно прочитать здесь: https://reactjs.org/docs/dom-elements.html
+        */}
         <input
           name="password"
           type="text"

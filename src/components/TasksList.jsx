@@ -23,11 +23,18 @@ const TasksList = ({ projectId }) => {
     setProjectTasks([{content: text}, ...projectTasks]);
     resetForm();
   };
-
+  /*
+       Надо исправить: class -> className.
+       Более подробно можно прочитать здесь: https://reactjs.org/docs/dom-elements.html
+  */
   return (
     <div class="todolist__list">
       <NewTaskForm onSubmit={onTaskSubmit} />
       <div class="todolist__tasks">
+        {/*
+          Нужно исправить: каждому Task нужен уникальный key, подробнее можно почитать здесь:
+          https://reactjs.org/docs/lists-and-keys.html
+        */}
         {projectTasks.map((task) => (
           <Task task={task} onDelete={onTaskDelete} />
         ))}
