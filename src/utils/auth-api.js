@@ -1,4 +1,7 @@
 const BASE_URL = 'https://auth.nomoreparties.co';
+/*
+  Отлично! Использовать шаблонные строки и выносить базовый URI в константу - наилучший вариант!
+*/
 
 const getResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
@@ -18,6 +21,10 @@ export const register = (data) => {
     console.log(err);
   });
 };
+
+{/*
+  Нужно исправить: перехват ошибки из функции лучше убрать - он вызывает
+*/}
 export const login = (data) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
